@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marry Christmas</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<section id='ball'>
+  <div class="box">
+    <div class="circle">
+      <h2>Happy<br>Christmas</h2>
+    </div>
+  </div>
+</section>
+
+<script>
+  function handleBalls() {
+    let sectionElement = document.querySelector('#ball');
+    let count = 300;
+    let i = 1;
+
+    while ( i < count ) {
+      let ball = document.createElement('i');
+      let left = Math.floor(Math.random() * window.innerWidth);
+      let top = Math.floor(Math.random() * window.innerHeight);
+      let size = Math.random() * 10;
+
+      ball.style.left = left + 'px';
+      ball.style.top = top + 'px';
+      ball.style.width = 1 + size + 'px';
+      ball.style.height = 1 + size + 'px';
+      ball.style.animationDuration = 5 + size +'s';
+      ball.style.animationDelay = -size + 's';
+
+      sectionElement.appendChild(ball);
+
+      i++;
+    }
+  }
+  handleBalls();
+
+</script>
+</body>
+</html>
